@@ -1,0 +1,28 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E265" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="django.db.models.fields.related.ForeignKey.title" />
+          <option value="catalog.models.Author.id" />
+          <option value="catalog.models.Book.id" />
+          <option value="povreg.models.Car.objects" />
+          <option value="povreg.models.Driver.objects" />
+          <option value="povreg.models.Insurance.objects" />
+          <option value="povreg.models.Officer.objects" />
+          <option value="povreg.models.Driver.id" />
+          <option value="django.db.models.fields.related.OneToOneField.is_expired" />
+          <option value="django.db.models.fields.TextField.__add__" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
