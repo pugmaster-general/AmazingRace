@@ -10,5 +10,5 @@ def index(request):
 
 def detail(request, clue_id):
     clue = get_object_or_404(Clue, id=clue_id)
-    return  render(request, 'clues/detail.html', {'clue': clue})
+    return render(request, 'clues/detail.html', {'clue': clue})
 
