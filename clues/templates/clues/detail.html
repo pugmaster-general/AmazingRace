@@ -1,0 +1,27 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+<title>3-2-4 Day Amazing Race Route Info</title>
+{% endblock %}
+
+{% block page_header %}
+<h1>Route Info</h1>
+{% endblock %}
+
+{$ block content %}
+<p>{{ clue.clue_text }}</p>
+
+{% if clue.clue_answer != "squadron parking lot" %}
+<p>Go there for your next
+    {% if clue.isDetour %} detour
+    {% else %} clue
+    {% endif %}
+</p>
+{% endif %}
+
+{% if clue.showMap %}
+<hr>
+<iframe src="https://www.google.com/maps/embed?pb={{ clue.clue_map }}"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
+{% endif %}
+{% endblock %}
