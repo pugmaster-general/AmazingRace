@@ -9,13 +9,13 @@
 {% endblock %}
 
 {% block content %}
-{% if clues_list %}
+{% if false %}
     <ul>
         {% for clue in clues_list %}
             <li><a href="{% url 'clues:detail' clue.id %}">{{ clue.clue_answer }}</a></li>
         {% endfor %}
     </ul>
 {% else %}
-    <p>No clues are available</p>
+    <p>No clues are available here, no cheating</p>
 {% endif %}
 {% endblock %}
