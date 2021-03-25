@@ -1,0 +1,43 @@
+{% extends "base_generic.html" %}
+
+{$ block title %}
+<title>Login</title>
+{$ endblock %}
+
+{% block page_header %}
+<h1>Login</h1>
+{% endblock %}
+
+{% block content %}
+    {% if form.errors %}
+        <p class="text-danger">Your username and password did not match. Please try again.</p>
+    {% endif %}
+
+    {% if next %}
+        {% if user.is_authenticated %}
+            <h1 class="h3 mb-3 font-weight-normal">Your account does not have access to this page. To proceed,
+            please login with an account that has access.</h1>
+        {% else %}
+            <h1 class="h3 mb-3 font-weight-normal">Please login to see this page.</h1>
+        {% endif %}
+    {% endif %}
+
+    <form class = "form-signin" method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>{{ form.username.label_tag }}</td>
+                <td>{{ form.username }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.password.label_tag }}</td>
+                <td>{{ form.password }}</td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button></td>
+            </tr>
+        </table>
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+{% endblock %}
